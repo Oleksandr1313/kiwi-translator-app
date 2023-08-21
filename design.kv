@@ -1,0 +1,47 @@
+<MyApp>:
+    orientation: 'vertical'
+
+    TextInput:
+        id: text_input
+        text: "Fetching quotes..."
+        size_hint: 1, 0.6
+        background_color: 0.95, 0.95, 0.95, 1
+        font_size: sp(18)
+        padding: '10dp'
+
+    TextInput:
+        id: translation_input
+        hint_text: 'Enter a word for translation'
+        size_hint: 1, 0.1
+        background_color: 0.95, 0.95, 0.95, 1
+        font_size: sp(18)
+        padding: '10dp'
+
+    Button:
+        text: 'Translate'
+        size_hint: 1, 0.1
+        font_size: sp(18)
+        on_press: app.translate_word()
+
+    TextInput:
+        id: translation_output
+        readonly: True
+        size_hint: 1, 0.1
+        background_color: 0.95, 0.95, 0.95, 1
+        font_size: sp(18)
+        padding: '10dp'
+
+    BoxLayout:
+        size_hint: 1, 0.2
+
+        Button:
+            text: '<'
+            size_hint: 0.5, 1
+            font_size: sp(18)
+            on_press: app.show_previous_quote()
+
+        Button:
+            text: '>'
+            size_hint: 0.5, 1
+            font_size: sp(18)
+            on_press: app.show_next_quote()
